@@ -11,9 +11,12 @@ def home():
 
 @app.route("/search")
 def hello():
+    all_jobs = {}
     keyword = request.args.get("keyword")
-    jobs = extract_berlin(keyword)
-    return render_template("search.html", keyword=keyword, jobs=jobs)
+    all_jobs["berlin"] = extract_berlin(keyword)
+    print(all_jobs)
+
+    return render_template("search.html", keyword=keyword, jobs=all_jobs)
 
 
 app.run("0.0.0.0")
