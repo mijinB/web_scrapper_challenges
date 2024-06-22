@@ -13,12 +13,11 @@ def home():
 
 @app.route("/search")
 def hello():
-    all_jobs = {}
     keyword = request.args.get("keyword")
-    all_jobs["berlin"] = extract_berlin(keyword)
-    all_jobs["web3"] = extract_web3(keyword)
-    all_jobs["wework"] = extract_wework(keyword)
-    print(all_jobs)
+    berlin = extract_berlin(keyword)
+    web3 = extract_web3(keyword)
+    wework = extract_wework(keyword)
+    all_jobs = berlin + web3 + wework
 
     return render_template("search.html", keyword=keyword, jobs=all_jobs)
 
