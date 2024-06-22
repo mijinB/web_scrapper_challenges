@@ -39,5 +39,3 @@ def extract_web3(keyword):
         jobs_list.append(job_data)
 
     return jobs_list
-
-extract_web3("python")
