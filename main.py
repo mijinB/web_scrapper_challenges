@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from extractors.berlinstartupjobs import extract_berlin
 from extractors.web3 import extract_web3
+from extractors.weworkremotely import extract_wework
 
 app = Flask("JobScrapper")
 
@@ -16,6 +17,7 @@ def hello():
     keyword = request.args.get("keyword")
     all_jobs["berlin"] = extract_berlin(keyword)
     all_jobs["web3"] = extract_web3(keyword)
+    all_jobs["wework"] = extract_wework(keyword)
     print(all_jobs)
 
     return render_template("search.html", keyword=keyword, jobs=all_jobs)
