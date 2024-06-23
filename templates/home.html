@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Scrapper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" />
 </head>
+
 <body>
-    <h1>Job Scrapper</h1>
-    <h4>무슨 직업을 원하시나요?</h4>
-    <form action="/search">
-        <input type="text" name="keyword" placeholder="스킬을 검색해주세요." />
-        <button>
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-    </form>
+    <div class="home-wrapper">
+        <div class="content-box">
+            <h1>Job Scrapper</h1>
+            <form action="/search">
+                <input type="text" name="keyword" placeholder="Please enter your skills." />
+                <button>
+                    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                </button>
+            </form>
+            <span>Sites to search for :</span>
+            <div class="site-imgs">
+                <img src="{{ url_for('static', filename='img/berlinstartupjobs.png') }}" alt="berlinstartupjobs logo"
+                    width="90" />
+                <img src="{{ url_for('static', filename='img/web3.jpg') }}" alt="web3 logo" width="60" />
+                <img src="{{ url_for('static', filename='img/weworkremotely.jpg') }}" alt="weworkremotely logo"
+                    width="60" />
+            </div>
+        </div>
+    </div>
 
     <script src="https://kit.fontawesome.com/0753527c6f.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
