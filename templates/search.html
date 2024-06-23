@@ -27,9 +27,13 @@
                             <span>🏢{{ job.company }}</span>
                             <span class="skill-box">
                                 ⚒️
+                                {% if job.skills|length > 0 %}
                                 {% for skill in job.skills %}
                                 <span class="skill-tag">{{ skill }}</span>
                                 {% endfor %}
+                                {% else %}
+                                <span>ㅡ</span>
+                                {% endif %}
                             </span>
                         </a>
                     </li>
