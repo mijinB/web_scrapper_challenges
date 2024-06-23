@@ -5,13 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Scrapper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/search.css') }}" />
 </head>
 
 <body>
-    <h1>Search Results for "{{ keyword }}":</h1>
-    {% for job in jobs %}
-    <div>{{ job.company }}</div>
-    {% endfor %}
+    <div class="search-wrapper">
+        <div class="content-box">
+            <h1>Search Results for "{{ keyword }}" :</h1>
+            <div class="jobs-table">
+                <div class="grid col">
+                    <span>Title</span>
+                    <span>Company</span>
+                    <span>skills</span>
+                </div>
+                <ul>
+                    {% for job in jobs %}
+                    <li>
+                        <a href="{{ job.position_link }}" target="_blank" class="grid">
+                            <span>{{ job.position_title }}</span>
+                            <span>🏢{{ job.company }}</span>
+                            <span class="skill-box">
+                                ⚒️
+                                {% for skill in job.skills %}
+                                <span class="skill-tag">{{ skill }}</span>
+                                {% endfor %}
+                            </span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <script src="https://kit.fontawesome.com/0753527c6f.js" crossorigin="anonymous"></script>
 </body>

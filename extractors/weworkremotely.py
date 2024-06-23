@@ -25,14 +25,13 @@ def extract_wework(keyword):
             "company": "",
             "position_title": "",
             "position_link": "",
-            "location": "",
+            "skills": [],
         }
 
         job_data["company"] = job.find("span", class_="company").text
         job_data["position_title"] = job.find("span", class_="title").text
         link_text = job.find("a", recursive=False).attrs["href"]
         job_data["position_link"] = f"https://weworkremotely.com{link_text}"
-        job_data["location"] = job.find("span", class_="region").text
 
         jobs_list.append(job_data)
 

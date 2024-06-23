@@ -1,0 +1,60 @@
+.search-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: url(../img/home_background.jpeg) center/cover;
+}
+.search-wrapper h1 {
+    margin-right: auto;
+    color: #fff;
+    font-size: 38px;
+}
+.content-box {
+    width: 80%;
+}
+.jobs-table {
+    position: relative;
+    height: 700px;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.jobs-table ul {
+    height: calc(100% - 60px);
+    overflow-y: scroll;
+}
+.jobs-table .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+}
+.jobs-table .grid.col {
+    justify-items: center;
+    position: sticky ;
+    top: 0;
+    padding: 20px 0;
+}
+.jobs-table .grid.col > span {
+    font-size: 20px;
+    font-weight: 600;
+}
+.jobs-table li a.grid {
+    margin: 8px 20px;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+.jobs-table li a.grid > span {
+    font-size: 16px;
+}
+.jobs-table li a.grid .skill-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+}
+.jobs-table li a.grid .skill-box .skill-tag {
+    padding: 3px 6px;
+    border: 1px solid #000;
+    border-radius: 4px;
+}
